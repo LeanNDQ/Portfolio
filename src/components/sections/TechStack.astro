@@ -1,0 +1,27 @@
+---
+import { siteData } from '../../data/site';
+import SectionHeading from '../ui/SectionHeading.astro';
+import Carousel from '../ui/Carousel.astro';
+
+const tech = (siteData.tech ?? {
+  title: 'Tecnologias',
+  subtitle: 'Herramientas y lenguajes que uso para aprender, practicar y construir.',
+  categories: [],
+}) as {
+  title?: string;
+  subtitle?: string;
+  categories?: { title?: string; items?: unknown[] }[];
+  carousel?: { name?: string; src?: string }[];
+};
+const techTitle = tech.title ?? 'Tecnologias';
+const techSubtitle =
+  tech.subtitle ?? 'Herramientas y lenguajes que uso para aprender, practicar y construir.';
+const techCarousel = tech.carousel ?? [];
+---
+
+<section id="tecnologias" class="section reveal" data-reveal>
+  <div class="section-inner">
+    <SectionHeading title={techTitle} subtitle={techSubtitle} eyebrow="Stack" />
+    <Carousel items={techCarousel} />
+  </div>
+</section>

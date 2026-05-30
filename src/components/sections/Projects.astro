@@ -1,0 +1,27 @@
+---
+import { siteData } from '../../data/site';
+import SectionHeading from '../ui/SectionHeading.astro';
+import ProjectCard from '../ui/ProjectCard.astro';
+
+const projects = siteData.projects ?? {
+  title: 'Proyectos',
+  subtitle: 'Espacio preparado para mostrar trabajos reales a medida que avance mi carrera.',
+  items: [],
+};
+const projectsTitle = projects.title ?? 'Proyectos';
+const projectsSubtitle =
+  projects.subtitle ??
+  'Espacio preparado para mostrar trabajos reales a medida que avance mi carrera.';
+const projectItems = projects.items ?? [];
+---
+
+<section id="proyectos" class="section reveal" data-reveal>
+  <div class="section-inner">
+    <SectionHeading title={projectsTitle} subtitle={projectsSubtitle} eyebrow="Work in progress" />
+    <div class="grid gap-6 lg:grid-cols-3">
+      {projectItems.map((project) => (
+        <ProjectCard project={project} />
+      ))}
+    </div>
+  </div>
+</section>

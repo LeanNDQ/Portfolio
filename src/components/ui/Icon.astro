@@ -1,0 +1,28 @@
+---
+import type { DeepPartial, IconDefinition } from '../../types/site';
+
+type Props = {
+  icon?: DeepPartial<IconDefinition>;
+  class?: string;
+  title?: string;
+};
+
+const { icon, class: className, title } = Astro.props as Props;
+const resolvedIcon: IconDefinition = {
+  name: icon?.name ?? 'Fallback',
+  viewBox: icon?.viewBox ?? '0 0 24 24',
+  path: icon?.path ?? '',
+};
+const ariaHidden = title ? undefined : 'true';
+---
+
+<svg
+  class={className}
+  viewBox={resolvedIcon.viewBox}
+  aria-hidden={ariaHidden}
+  role={title ? 'img' : 'presentation'}
+  fill="currentColor"
+>
+  {title ? <title>{title}</title> : null}
+  <path d={resolvedIcon.path} />
+</svg>

@@ -1,0 +1,74 @@
+---
+import { siteData } from '../../data/site';
+
+const hero = siteData.hero ?? {};
+const ctaPrimary = hero.ctaPrimary ?? { label: 'Contactar', href: '#contacto' };
+const ctaSecondary = hero.ctaSecondary ?? {
+  label: 'Descargar CV',
+  href: '/CV_Leandro_Diaz_Quinteros.pdf',
+  download: true,
+};
+const heroImage = (hero.image ?? {
+  src: '/images/Foto.png',
+  alt: 'Foto de perfil de Leandro Diaz Quinteros',
+}) as { src: string; alt: string };
+---
+
+<section id="inicio" class="section reveal" data-reveal>
+  <div class="section-inner">
+    <div class="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+      <div class="space-y-6">
+        <p class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.3em] text-white/70">
+          Disponible para crecer
+        </p>
+        <h1 class="text-4xl font-semibold leading-tight text-white sm:text-5xl">
+          {hero.name ?? 'Leandro Diaz Quinteros'}
+        </h1>
+        <p class="text-lg text-brand-100/80">
+          {hero.role ?? 'Estudiante de Tecnico Superior en Desarrollo de Software'}
+        </p>
+        <p class="max-w-xl text-base leading-7 text-slate-300">
+          {hero.summary ??
+            'Me enfoco en construir bases solidas en desarrollo web y software. Busco crecer con desafios reales, aportar con responsabilidad y aprender todos los dias.'}
+        </p>
+        <div class="flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center">
+          <a
+            class="w-full rounded-full bg-white px-6 py-3 text-center text-sm font-semibold text-slate-900 transition hover:-translate-y-0.5 sm:w-auto"
+            href={ctaPrimary.href}
+          >
+            {ctaPrimary.label}
+          </a>
+          <a
+            class="w-full rounded-full border border-white/10 px-6 py-3 text-center text-sm font-semibold text-white/80 transition hover:-translate-y-0.5 hover:border-white/30 hover:text-white sm:w-auto"
+            href={ctaSecondary.href}
+            download={ctaSecondary.download}
+          >
+            {ctaSecondary.label}
+          </a>
+        </div>
+      </div>
+      <div class="flex justify-center lg:justify-end">
+        <div class="glass relative w-full max-w-md overflow-hidden rounded-3xl border border-white/10 p-5 sm:max-w-lg sm:p-8">
+          <div class="absolute inset-0 bg-hero-gradient opacity-80"></div>
+          <div class="relative">
+            <div class="mx-auto w-56 overflow-hidden rounded-3xl border border-white/20 bg-white/5 p-2 sm:w-64 lg:w-80">
+              <img
+                src={heroImage.src}
+                alt={heroImage.alt}
+                class="h-64 w-full rounded-2xl object-cover sm:h-80 lg:h-96"
+                loading="lazy"
+              />
+            </div>
+            <div class="mt-6 space-y-3 text-center">
+              <p class="text-xs uppercase tracking-[0.3em] text-slate-400">Perfil</p>
+              <p class="text-base font-semibold text-white">Desarrollador De Software Junior</p>
+              <p class="text-sm text-slate-300">
+                Enfocado en aprender, experimentar y crear soluciones con impacto.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

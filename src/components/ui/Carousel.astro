@@ -1,0 +1,28 @@
+---
+type CarouselItem = {
+  name?: string;
+  src?: string;
+};
+
+type Props = {
+  items?: CarouselItem[];
+  direction?: 'left' | 'right';
+};
+
+const { items = [], direction = 'right' } = Astro.props as Props;
+const safeItems = items.filter((item) => item?.src);
+---
+
+<div class="carousel" data-direction={direction} aria-label="Tecnologias principales">
+  <div class="carousel-track">
+    {[...Array(2)].map(() => (
+      <div class="carousel-row">
+        {safeItems.map((item) => (
+          <div class="carousel-item">
+            <img src={item.src} alt={item.name ?? 'Tecnologia'} loading="lazy" />
+          </div>
+        ))}
+      </div>
+    ))}
+  </div>
+</div>

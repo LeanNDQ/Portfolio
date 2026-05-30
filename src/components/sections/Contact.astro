@@ -1,0 +1,59 @@
+---
+import { siteData } from '../../data/site';
+import type { IconDefinition } from '../../types/site';
+import SectionHeading from '../ui/SectionHeading.astro';
+import Icon from '../ui/Icon.astro';
+
+const contact = siteData.contact ?? {
+  title: 'Contacto',
+  subtitle: 'Disponible para colaborar, aprender y sumar experiencia profesional.',
+  items: [],
+};
+const contactTitle = contact.title ?? 'Contacto';
+const contactSubtitle =
+  contact.subtitle ?? 'Disponible para colaborar, aprender y sumar experiencia profesional.';
+const contactItems = contact.items ?? [];
+const resolveIcon = (icon: unknown): IconDefinition | undefined => icon as IconDefinition | undefined;
+---
+
+<section id="contacto" class="section reveal" data-reveal>
+  <div class="section-inner">
+    <div class="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+      <div>
+        <SectionHeading title={contactTitle} subtitle={contactSubtitle} />
+        <p class="max-w-xl text-sm leading-7 text-slate-300">
+          Respondo con rapidez, me interesa colaborar en proyectos reales y sumar experiencia en equipos con buen clima de trabajo.
+        </p>
+      </div>
+      <div class="glass rounded-3xl border border-white/10 p-6">
+        <ul class="space-y-4">
+          {contactItems.map((item) => {
+            const href = item.href ?? '#contacto';
+            const label = item.label ?? 'Contacto';
+            const value = item.value ?? 'Disponible';
+            const isExternal = href.startsWith('http');
+
+            return (
+              <li>
+                <a
+                  class="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 p-4 text-sm text-slate-200 transition hover:border-white/30"
+                  href={href}
+                  target={isExternal ? '_blank' : undefined}
+                  rel={isExternal ? 'noreferrer noopener' : undefined}
+                >
+                  <span class="grid h-10 w-10 place-items-center rounded-full border border-white/10 bg-white/5">
+                    <Icon icon={resolveIcon(item.icon)} class="h-4 w-4" title={label} />
+                  </span>
+                  <span>
+                    <span class="block text-xs uppercase tracking-[0.2em] text-slate-400">{label}</span>
+                    <span class="block text-sm font-semibold text-white">{value}</span>
+                  </span>
+                </a>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

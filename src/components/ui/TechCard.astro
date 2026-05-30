@@ -1,0 +1,17 @@
+---
+import type { DeepPartial, TechItem, TechTone } from '../../types/site';
+
+type Props = {
+  item: DeepPartial<TechItem>;
+};
+
+const { item } = Astro.props as Props;
+const name = typeof item.name === 'string' && item.name.trim() ? item.name : 'Tecnologia';
+const abbr = item.abbr ?? name.slice(0, 2).toUpperCase();
+const tone = (item.tone ?? 'violet') as TechTone;
+---
+
+<div class="tech-card" data-tone={tone}>
+  <div class="tech-icon">{abbr}</div>
+  <p class="text-sm font-semibold text-white">{name}</p>
+</div>
