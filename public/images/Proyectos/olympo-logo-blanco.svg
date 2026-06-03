@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" width="200" height="60">
+  <defs>
+    <style>
+      .logo-text {
+        font-family: 'Arial', sans-serif;
+        font-weight: bold;
+        font-size: 42px;
+        fill: #ffffff;
+        letter-spacing: 2px;
+        text-anchor: middle;
+        dominant-baseline: central;
+      }
+    </style>
+  </defs>
+  <text x="100" y="30" class="logo-text">OLYMPO</text>
+</svg>

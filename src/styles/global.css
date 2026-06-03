@@ -178,6 +178,121 @@
 		@apply grid h-12 w-12 place-items-center rounded-2xl border border-white/10 text-xs font-semibold uppercase tracking-widest text-white;
 	}
 
+	.project-logo {
+		@apply grid h-14 w-14 place-items-center rounded-2xl border border-white/10 bg-white/5 p-1.5;
+	}
+
+	.project-logo--hero {
+		@apply mx-auto h-28 w-28;
+		background: transparent;
+		border: none;
+		box-shadow: none;
+	}
+
+	.project-logo img {
+		height: 100%;
+		width: 100%;
+		object-fit: contain;
+		display: block;
+		max-height: 100%;
+	}
+
+	.project-logo--hero img {
+		height: 100%;
+		width: 100%;
+		filter: drop-shadow(0 18px 35px rgba(2, 6, 23, 0.55));
+	}
+
+	.project-cta {
+		@apply inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white/90 transition;
+	}
+
+	.project-cta:hover {
+		border-color: rgba(255, 255, 255, 0.35);
+		background: rgba(255, 255, 255, 0.08);
+	}
+
+	.project-dialog {
+		width: min(960px, 92vw);
+		margin: auto;
+		inset: 0;
+		border-radius: 24px;
+		border: 1px solid rgba(255, 255, 255, 0.12);
+		background: rgba(2, 6, 23, 0.98);
+		color: #f8fafc;
+		padding: 0;
+		box-shadow: 0 30px 80px rgba(2, 6, 23, 0.6);
+		max-height: 90vh;
+		overflow: hidden;
+	}
+
+	.project-dialog::backdrop {
+		background: rgba(2, 6, 23, 0.85);
+		backdrop-filter: blur(4px);
+	}
+
+	.project-dialog-header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 1.25rem 1.5rem;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+	}
+
+	.project-dialog-title {
+		font-size: 0.75rem;
+		letter-spacing: 0.35em;
+		text-transform: uppercase;
+		color: #cbd5f5;
+	}
+
+	.project-dialog-close {
+		@apply rounded-full border border-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white/80 transition;
+	}
+
+	.project-dialog-close:hover {
+		border-color: rgba(255, 255, 255, 0.35);
+	}
+
+	.project-dialog-body {
+		padding: 1.5rem;
+		display: grid;
+		place-items: center;
+		max-height: calc(90vh - 72px);
+		overflow: auto;
+	}
+
+	.project-dialog-body--text {
+		place-items: start;
+		gap: 1rem;
+	}
+
+	.project-info-title {
+		font-size: 1.1rem;
+		font-weight: 600;
+		color: #f8fafc;
+	}
+
+	.project-info-list {
+		display: grid;
+		gap: 0.75rem;
+		color: #cbd5f5;
+		font-size: 0.95rem;
+		line-height: 1.7;
+		list-style: disc;
+		padding-left: 1.2rem;
+	}
+
+	.project-dialog-body img {
+		width: min(100%, 920px);
+		max-height: none;
+		height: auto;
+		object-fit: contain;
+		border-radius: 16px;
+		border: 1px solid rgba(255, 255, 255, 0.08);
+		box-shadow: 0 18px 60px rgba(2, 6, 23, 0.6);
+	}
+
 	.tech-card[data-tone='violet'] .tech-icon {
 		background: linear-gradient(135deg, rgba(124, 58, 237, 0.4), rgba(14, 116, 144, 0.2));
 	}

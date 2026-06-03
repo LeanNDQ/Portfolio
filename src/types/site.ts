@@ -50,14 +50,34 @@ export type TechCategory = Extensible<{
   items: TechItem[];
 }>;
 
+export type ServiceItem = Extensible<{
+  title: string;
+  description: string;
+  highlights?: string[];
+}>;
+
 export type ProjectStatus = 'Terminado' | 'En progreso' | 'Investigando' | (string & {});
 
 export type Project = Extensible<{
+  id?: string;
   title: string;
   description: string;
   status: ProjectStatus;
   tag: string;
   timeline: string;
+  role?: string;
+  logo?: {
+    src: string;
+    alt: string;
+  };
+  cta?: CtaLink;
+  preview?: {
+    src: string;
+    alt: string;
+  };
+  previewLabel?: string;
+  info?: string[];
+  infoTitle?: string;
 }>;
 
 export type ContactItem = Extensible<{
@@ -94,6 +114,11 @@ export type SiteData = {
       src?: string;
     }[];
     categories: TechCategory[];
+  };
+  services: {
+    title: string;
+    subtitle: string;
+    items: ServiceItem[];
   };
   projects: {
     title: string;

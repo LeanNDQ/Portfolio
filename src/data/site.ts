@@ -35,8 +35,9 @@ export const siteData: SiteDataInput = {
   nav: [
     { label: 'Inicio', href: '#inicio' },
     { label: 'Sobre mi', href: '#sobre-mi' },
+    { label: 'Servicios', href: '#servicios' },
     { label: 'Tecnologias', href: '#tecnologias' },
-    { label: 'Proyectos', href: '#proyectos' },
+    { label: 'Participaciones', href: '#proyectos' },
     { label: 'Contacto', href: '#contacto' },
   ],
   hero: {
@@ -60,22 +61,22 @@ export const siteData: SiteDataInput = {
   },
   about: {
     title: 'Sobre mi',
-    subtitle: 'Construyendo una base tecnica solida con foco en aprendizaje y crecimiento.',
+    subtitle: 'Perfil junior con base tecnica solida y foco en aportar valor en equipos de desarrollo.',
     items: [
       {
-        title: 'Formacion actual',
+        title: 'Perfil profesional',
         description:
-          'Estudiante de Tecnico Superior en Desarrollo de Software, con enfoque en buenas practicas y pensamiento logico.',
+          'Tecnico Superior en Desarrollo de Software con enfoque en aprendizaje continuo, pensamiento analitico y resolucion de problemas. Busco aportar valor real y seguir creciendo profesionalmente.',
       },
       {
-        title: 'Interes profesional',
+        title: 'Formacion y experiencia',
         description:
-          'Me atrae el desarrollo web moderno, la arquitectura limpia y el trabajo colaborativo orientado a producto.',
+          'Formacion academica en desarrollo de software y experiencia en proyectos academicos y practicas profesionalizantes, trabajando en equipo y con objetivos claros.',
       },
       {
-        title: 'Objetivo',
+        title: 'Aptitudes clave',
         description:
-          'Sumar experiencia real, aportar valor y evolucionar hacia un perfil full-stack confiable y versatil.',
+          'Trabajo en equipo, adaptabilidad, proactividad y orientacion a resultados. Me enfoco en comunicar claro, aprender rapido y ejecutar con responsabilidad.',
       },
     ],
   },
@@ -129,16 +130,128 @@ export const siteData: SiteDataInput = {
       },
     ],
   },
-  projects: {
-    title: 'Proyectos',
-    subtitle: 'Espacio preparado para mostrar trabajos reales a medida que avance mi carrera.',
+  services: {
+    title: 'Servicios',
+    subtitle: 'Soluciones a medida para proyectos freelance, con foco en calidad, claridad y resultados.',
     items: [
       {
-        title: 'Titulo del proyecto',
-        description: 'Descripcion breve del proyecto, tecnologias usadas y objetivo del mismo.',
+        title: 'Sitios web y landing pages',
+        description:
+          'Diseño y desarrollo de sitios modernos, rapidos y orientados a conversion o presentacion profesional.',
+        highlights: ['Contenido claro y estructura profesional', 'Optimizacion basica para performance'],
+      },
+      {
+        title: 'Aplicaciones web a medida',
+        description:
+          'Construccion de aplicaciones con flujos definidos, paneles internos y experiencia simple para el usuario.',
+        highlights: ['Login y roles segun necesidad', 'Paneles administrativos y gestion de datos'],
+      },
+      {
+        title: 'Mantenimiento y mejoras',
+        description:
+          'Actualizacion de contenido, ajustes visuales y mejoras funcionales para proyectos existentes.',
+        highlights: ['Correccion de bugs', 'Mejoras de usabilidad'],
+      },
+    ],
+  },
+  projects: {
+    title: 'Participaciones',
+    subtitle:
+      'Proyectos en equipo donde participe como full-stack, con foco en impacto real y calidad tecnica.',
+    items: [
+      {
+        id: 'crobf',
+        title: 'CROBF',
+        description:
+          'Equipo de desarrollo y sitio web de servicios de software. Aporto en front y back con foco en producto y arquitectura.',
+        status: 'En progreso',
+        tag: 'Equipo CROBF',
+        timeline: '2024 - hoy',
+        role: 'Full-stack',
+        logo: {
+          src: '/images/Proyectos/crobf-logo.png',
+          alt: 'Logo de CROBF',
+        },
+        cta: {
+          label: 'Ver sitio',
+          href: 'https://crobf.tech/es/',
+          external: true,
+        },
+        info: [
+          'Equipo apasionado por tecnologia, desarrollo de software e innovacion.',
+          'Objetivo: aprender, crecer y crear soluciones con impacto en la comunidad tech.',
+          'Participacion full-stack en proyectos de servicios y producto.',
+        ],
+      },
+      {
+        id: 'luisa',
+        title: 'Luisa (SVD-VD)',
+        description:
+          'Sistema de votacion digital seguro para la Municipalidad de San Rafael (Vendimia), con trazabilidad criptografica. Repositorio privado.',
         status: 'Terminado',
-        tag: 'Producto personal',
-        timeline: '2026',
+        tag: 'Practicas profesionalizantes',
+        timeline: '2025 - 2026',
+        role: 'Full-stack',
+        logo: {
+          src: '/images/Proyectos/Luisa_logo.png',
+          alt: 'Logo de Luisa',
+        },
+        info: [
+          'Plataforma de votacion digital para la eleccion de la Reina de la Vendimia.',
+          'Seguridad con cadena de hashes y control de acceso por roles.',
+          'Kioscos Android con interfaz simple y panel para locutores en vivo.',
+          'Reportes finales en PDF y monitoreo en tiempo real sin revelar resultados parciales.',
+        ],
+      },
+      {
+        id: 'olympo',
+        title: 'Olympo',
+        description:
+          'Catalogo digital de alto rendimiento con Astro y API REST en Node/Express, integrando carrito y WhatsApp.',
+        status: 'Terminado',
+        tag: 'Equipo CROBF',
+        timeline: '2024 - 2026',
+        role: 'Full-stack',
+        logo: {
+          src: '/images/Proyectos/OlympoLogo.png',
+          alt: 'Logo de Olympo',
+        },
+        cta: {
+          label: 'Ver sitio',
+          href: 'https://catalogo-olympo.vercel.app/',
+          external: true,
+        },
+        info: [
+          'Frontend Astro con islas React para carrito y acciones clave.',
+          'Backend Node/Express y base SQLite con @libsql/client.',
+          'Panel admin con CRUD de productos, categorias, ofertas y banners.',
+          'Checkout rapido con integracion a WhatsApp.',
+        ],
+      },
+      {
+        id: 'medicine',
+        title: 'Medicine',
+        description:
+          'Plataforma de gestion de turnos con autenticacion, perfiles y flujo de verificacion. En desarrollo.',
+        status: 'En progreso',
+        tag: 'Equipo CROBF',
+        timeline: '2024 - hoy',
+        role: 'Full-stack',
+        logo: {
+          src: '/images/Proyectos/medicine_logo.png',
+          alt: 'Logo de Medicine',
+        },
+        preview: {
+          src: '/images/Proyectos/MedicineHomePage.png',
+          alt: 'Muestra de la pagina principal de Medicine',
+        },
+        previewLabel: 'Ver muestra',
+        info: [
+          'Plataforma para gestion de turnos con login y roles.',
+          'Flujo de verificacion de email y completado de perfil.',
+          'Backend con JWT y SQLite/Turso para datos clinicos.',
+          'Frontend en Astro con enfoque en experiencia simple.',
+        ],
       },
     ],
   },
