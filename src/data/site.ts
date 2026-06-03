@@ -35,7 +35,6 @@ export const siteData: SiteDataInput = {
   nav: [
     { label: 'Inicio', href: '#inicio' },
     { label: 'Sobre mi', href: '#sobre-mi' },
-    { label: 'Servicios', href: '#servicios' },
     { label: 'Tecnologias', href: '#tecnologias' },
     { label: 'Participaciones', href: '#proyectos' },
     { label: 'Contacto', href: '#contacto' },
@@ -127,30 +126,6 @@ export const siteData: SiteDataInput = {
           { name: 'GitHub', abbr: 'GH', tone: 'violet' },
           { name: 'VS Code', abbr: 'VSC', tone: 'sky' },
         ],
-      },
-    ],
-  },
-  services: {
-    title: 'Servicios',
-    subtitle: 'Soluciones a medida para proyectos freelance, con foco en calidad, claridad y resultados.',
-    items: [
-      {
-        title: 'Sitios web y landing pages',
-        description:
-          'Diseño y desarrollo de sitios modernos, rapidos y orientados a conversion o presentacion profesional.',
-        highlights: ['Contenido claro y estructura profesional', 'Optimizacion basica para performance'],
-      },
-      {
-        title: 'Aplicaciones web a medida',
-        description:
-          'Construccion de aplicaciones con flujos definidos, paneles internos y experiencia simple para el usuario.',
-        highlights: ['Login y roles segun necesidad', 'Paneles administrativos y gestion de datos'],
-      },
-      {
-        title: 'Mantenimiento y mejoras',
-        description:
-          'Actualizacion de contenido, ajustes visuales y mejoras funcionales para proyectos existentes.',
-        highlights: ['Correccion de bugs', 'Mejoras de usabilidad'],
       },
     ],
   },
